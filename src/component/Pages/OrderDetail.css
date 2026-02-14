@@ -1,0 +1,228 @@
+/* Page */
+.od-page{
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #111;
+  padding: 24px 18px;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.od-wrap{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.od-header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.od-title{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.od-sub{
+  margin: 6px 0 0;
+  color: rgba(0,0,0,0.60);
+  font-size: 13px;
+}
+
+.od-mono{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+}
+
+/* Cards */
+.od-card{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.05);
+}
+
+.od-card-title{
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.od-muted{
+  color: rgba(0,0,0,0.60);
+}
+
+.od-small{ font-size: 12px; }
+.od-strong{ font-weight: 900; }
+
+.od-loading{
+  margin: 0;
+  padding: 10px 0;
+  font-weight: 800;
+}
+
+/* Back button */
+.od-back{
+  text-decoration: none;
+  background: #111;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.od-back:hover{ opacity: 0.9; }
+
+/* Top grid */
+.od-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 900px){
+  .od-grid{ grid-template-columns: 1fr; }
+}
+
+/* Status pills */
+.od-status-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.od-pill{
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.04);
+}
+
+/* Simple coloring */
+.od-pill.placed{ background: rgba(91,94,247,0.12); border-color: rgba(91,94,247,0.28); color: #2a2df0; }
+.od-pill.pending{ background: rgba(255,193,7,0.18); border-color: rgba(255,193,7,0.35); color: #8a6d00; }
+.od-pill.paid{ background: rgba(76,175,80,0.16); border-color: rgba(76,175,80,0.32); color: #1b5e20; }
+.od-pill.delivered{ background: rgba(76,175,80,0.16); border-color: rgba(76,175,80,0.32); color: #1b5e20; }
+.od-pill.cancelled{ background: rgba(244,67,54,0.12); border-color: rgba(244,67,54,0.28); color: #b71c1c; }
+
+/* Key/Value rows */
+.od-kv{
+  display: grid;
+  gap: 10px;
+}
+.od-kv-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f6f7fb;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.od-kv-row span{ color: rgba(0,0,0,0.65); font-weight: 700; }
+.od-kv-row b{ font-weight: 900; }
+
+/* Items table */
+.od-items{ margin-top: 14px; }
+
+.od-table{
+  display: grid;
+  gap: 10px;
+}
+
+.od-tr{
+  display: grid;
+  grid-template-columns: 1.8fr 0.6fr 0.4fr 0.6fr;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.od-head{
+  background: #f6f7fb;
+  border-style: dashed;
+  font-weight: 900;
+  color: rgba(0,0,0,0.70);
+}
+
+@media (max-width: 700px){
+  .od-tr{ grid-template-columns: 1fr; }
+  .od-head{ display: none; }
+}
+
+/* Product cell */
+.od-prod{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.od-img{
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f1f2f6;
+  border: 1px solid rgba(0,0,0,0.06);
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.od-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.od-img-fallback{
+  font-size: 20px;
+}
+
+.od-prod-info{
+  min-width: 0;
+}
+
+.od-prod-name{
+  font-weight: 900;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Footer total */
+.od-footer{
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.od-footer-row{
+  width: min(420px, 100%);
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: #111;
+  color: #fff;
+  font-weight: 900;
+}

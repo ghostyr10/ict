@@ -1,0 +1,733 @@
+:root {
+  --accent: #2563eb;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #111827;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background: #f1f3f5;
+  padding: 20px;
+  border-right: 1px solid #e6e9ee;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+.sidebar li:hover {
+  background: rgba(37,99,235,0.06);
+  color: var(--accent);
+}
+.sidebar li.active {
+  background: rgba(37,99,235,0.12);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Main */
+.main-wrapper {
+  flex: 1;
+  overflow: auto;
+}
+.main {
+  padding: 30px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 900px;
+}
+
+/* Form */
+.card label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.card input, .card select, .card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.row {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 400px;
+}
+.upload {
+  border: 2px dashed #cbd5e1;
+  padding: 30px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+.upload span { color: var(--accent); font-weight: 600; }
+button {
+  margin-top: 25px;
+  background: var(--accent);
+  color: white;
+  padding: 14px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+/* ===========================
+   Legacy Seller CSS (scoped)
+   =========================== */
+
+/* moved :root -> .sp-shell to avoid global variable collisions */
+.sp-shell {
+  --accent: #2563eb;
+}
+
+/* was: * { box-sizing: border-box; } */
+.sp-shell * {
+  box-sizing: border-box;
+}
+
+/* was: body {...} */
+.sp-shell {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #111827;
+}
+
+/* was: .dashboard {...} */
+.sp-shell .dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sp-shell .sidebar {
+  width: 260px;
+  background: #f1f3f5;
+  padding: 20px;
+  border-right: 1px solid #e6e9ee;
+}
+
+.sp-shell .sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.sp-shell .sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+.sp-shell .sidebar li:hover {
+  background: rgba(37,99,235,0.06);
+  color: var(--accent);
+}
+.sp-shell .sidebar li.active {
+  background: rgba(37,99,235,0.12);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Main */
+.sp-shell .main-wrapper {
+  flex: 1;
+  overflow: auto;
+}
+.sp-shell .main {
+  padding: 30px;
+}
+.sp-shell .card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 900px;
+}
+
+/* Form */
+.sp-shell .card label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.sp-shell .card input,
+.sp-shell .card select,
+.sp-shell .card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sp-shell .row1 {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 400px; /* kept as-is */
+}
+
+.sp-shell .upload {
+  border: 2px dashed #cbd5e1;
+  padding: 30px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+.sp-shell .upload span {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* was: button {...} (THIS was affecting whole site) */
+.sp-shell button {
+  margin-top: 25px;
+  background: var(--accent);
+  color: white;
+  padding: 14px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== EDIT MODAL ===== */
+.sp-shell .edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.sp-shell .edit-modal {
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+}
+
+.sp-shell .edit-modal input,
+.sp-shell .edit-modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.sp-shell .edit-modal textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.sp-shell .edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sp-shell .edit-actions button {
+  flex: 1;
+}
+
+.sp-shell .edit-actions .cancel {
+  background: #e11d48;
+}
+
+/* ===========================
+   Your NEW SellerPanel CSS (already scoped)
+   =========================== */
+
+.sp-shell{
+  --bg:#07101f;
+  --panel: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.60);
+  --good:#2ee59d;
+  --bad:#ff5c7a;
+  --warn:#ffcc66;
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+  min-height:100vh;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, #20335d 0%, transparent 60%),
+              radial-gradient(900px 500px at 110% 0%, #2a0f3b 0%, transparent 55%),
+              var(--bg);
+}
+
+.sp-shell *{box-sizing:border-box}
+
+/* ... keep the rest of your existing sp- styles exactly as you pasted ... */
+
+/* FIX: remove ghost text created by pseudo-elements */
+.sp-shell .sp-file::before,
+.sp-shell .sp-file::after,
+.sp-shell .sp-preview::before,
+.sp-shell .sp-preview::after {
+  content: none !important;
+}
+
+.sp-shell .sp-file span {
+  display: inline-block;
+}/* ===========================
+   SCOPED FIX (NO DESIGN CHANGE)
+   Everything below is same CSS,
+   only prefixed with .sp-shell
+   so it won't affect other pages.
+   =========================== */
+
+.sp-shell {
+  --accent: #2563eb;
+}
+
+.sp-shell * { box-sizing: border-box; }
+
+.sp-shell {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #111827;
+}
+
+.sp-shell .dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sp-shell .sidebar {
+  width: 260px;
+  background: #f1f3f5;
+  padding: 20px;
+  border-right: 1px solid #e6e9ee;
+}
+
+.sp-shell .sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.sp-shell .sidebar li {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+.sp-shell .sidebar li:hover {
+  background: rgba(37,99,235,0.06);
+  color: var(--accent);
+}
+.sp-shell .sidebar li.active {
+  background: rgba(37,99,235,0.12);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Main */
+.sp-shell .main-wrapper {
+  flex: 1;
+  overflow: auto;
+}
+.sp-shell .main {
+  padding: 30px;
+}
+.sp-shell .card {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 900px;
+}
+
+/* Form */
+.sp-shell .card label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.sp-shell .card input,
+.sp-shell .card select,
+.sp-shell .card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.sp-shell .row1 {
+  display: flex;
+  gap: 15px;
+  margin-top: 8px;
+  font-size: 400px;
+}
+.sp-shell .upload {
+  border: 2px dashed #cbd5e1;
+  padding: 30px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+.sp-shell .upload span { color: var(--accent); font-weight: 600; }
+
+.sp-shell button {
+  margin-top: 25px;
+  background: var(--accent);
+  color: white;
+  padding: 14px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== EDIT MODAL ===== */
+.sp-shell .edit-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.sp-shell .edit-modal {
+  width: min(520px, 92vw);
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+}
+
+.sp-shell .edit-modal input,
+.sp-shell .edit-modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.sp-shell .edit-modal textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.sp-shell .edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sp-shell .edit-actions button {
+  flex: 1;
+}
+
+.sp-shell .edit-actions .cancel {
+  background: #e11d48;
+}
+
+
+/* ===========================
+   YOUR NEW SELLER PANEL CSS
+   (already scoped)
+   =========================== */
+
+.sp-shell{
+  --bg:#07101f;
+  --panel: rgba(255,255,255,.06);
+  --stroke: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.60);
+  --good:#2ee59d;
+  --bad:#ff5c7a;
+  --warn:#ffcc66;
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+  min-height:100vh;
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 20% -10%, #20335d 0%, transparent 60%),
+              radial-gradient(900px 500px at 110% 0%, #2a0f3b 0%, transparent 55%),
+              var(--bg);
+}
+.sp-topbar{
+  height:72px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--stroke);
+  background: rgb(47, 45, 45);
+  backdrop-filter: blur(10px);
+  position: sticky; top:0; z-index:10;
+}
+.sp-brand{display:flex; align-items:baseline; gap:10px; font-weight:900; letter-spacing:.4px}
+.sp-dot{width:10px;height:10px;border-radius:50%; background:linear-gradient(180deg,#63b3ff,#b98bff)}
+.sp-sub{font-weight:600; font-size:12px; color: var(--muted)}
+.sp-top-actions{display:flex; gap:10px}
+
+.sp-body{display:grid; grid-template-columns: 260px 1fr; min-height: calc(100vh - 72px);}
+.sp-sidebar{
+  border-right: 1px solid var(--stroke);
+  padding: 18px 14px;
+  background: rgba(41, 41, 43, 0.708);
+  backdrop-filter: blur(10px);
+}
+.sp-nav{
+  width:100%;
+  text-align:left;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor:pointer;
+  transition:.15s ease;
+  font-weight:800;
+}
+.sp-nav:hover{background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08)}
+.sp-nav.active{
+  background: linear-gradient(180deg, rgba(99,179,255,.18), rgba(185,139,255,.10));
+  border-color: rgba(99,179,255,.28);
+}
+.sp-chip{
+  margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgb(250, 250, 250);
+  color: var(--muted);
+  text-align:center;
+}
+
+.sp-content{padding: 22px 22px 40px; overflow:auto}
+.sp-head{display:flex; justify-content:space-between; align-items:flex-start; gap: 12px; margin-bottom: 12px}
+.sp-title{margin:0; font-size: 28px}
+.sp-muted{color: var(--muted); margin: 6px 0 0}
+
+.sp-btn{
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(99,179,255,.35);
+  background: linear-gradient(180deg, rgba(99,179,255,.25), rgba(99,179,255,.15));
+  color: var(--text);
+  font-weight: 900;
+  cursor:pointer;
+  transition:.15s ease;
+}
+.sp-btn:hover{transform: translateY(-1px); box-shadow: 0 10px 26px rgba(99,179,255,.20)}
+.sp-btn.ghost{border-color: rgba(255,255,255,.14); background: rgba(255,255,255,.06)}
+.sp-btn.danger{border-color: rgba(255,92,122,.45); background: rgba(255,92,122,.14)}
+
+.sp-grid{display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px}
+.sp-card{
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.06);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.sp-card.sp-wide{grid-column: 1 / -1}
+.sp-card-row{display:flex; justify-content:space-between; align-items:center; gap: 12px}
+.sp-kicker{margin:0; font-size: 12px; letter-spacing:.14em; text-transform: uppercase; color: var(--muted)}
+.sp-num{margin: 6px 0 0; font-size: 30px}
+.sp-icon{font-size: 28px; opacity:.9}
+.sp-divider{height: 1px; background: rgba(255,255,255,.08); margin: 14px 0}
+
+.sp-form-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap: 14px}
+.sp-field{display:flex; flex-direction:column; gap: 8px; margin-bottom: 12px}
+.sp-field label{font-size: 12px; color: var(--muted); letter-spacing:.12em; text-transform: uppercase}
+.sp-field input,.sp-field textarea{
+  width:100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(0,0,0,.16);
+  color: var(--text);
+  outline:none;
+}
+.sp-field textarea{min-height: 110px; resize: vertical}
+.sp-two{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+
+.sp-preview{
+  border: 1px dashed rgba(255,255,255,.22);
+  background: rgba(0,0,0,.16);
+  border-radius: 18px;
+  padding: 12px;
+}
+.sp-preview img{
+  width:100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.sp-file{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  cursor:pointer;
+  font-weight: 900;
+  margin-top: 12px;
+}
+.sp-file input{display:none}
+
+.sp-list{display:flex; flex-direction:column; gap: 12px}
+.sp-item{
+  display:grid;
+  grid-template-columns: 84px 1fr auto;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  border-radius: 18px;
+}
+.sp-item img{
+  width: 84px; height: 84px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.sp-item-title{font-weight: 950; font-size: 16px}
+.sp-item-sub{color: var(--muted); margin-top: 6px; font-size: 13px}
+.sp-item-actions{display:flex; flex-direction:column; gap: 10px; justify-content:center}
+.sp-badge{
+  margin-top: 10px;
+  display:inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  font-size: 12px;
+  font-weight: 900;
+  width: fit-content;
+}
+.sp-badge.good{border-color: rgba(46,229,157,.35); background: rgba(46,229,157,.14)}
+.sp-badge.warn{border-color: rgba(255,204,102,.35); background: rgba(255,204,102,.14)}
+.sp-badge.bad{border-color: rgba(255,92,122,.35); background: rgba(255,92,122,.12)}
+
+.sp-orders{display:flex; flex-direction:column; gap: 10px}
+.sp-order{
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.05);
+  color: rgba(255,255,255,.85);
+}
+.sp-empty{padding: 18px; text-align:center; color: var(--muted)}
+
+/* Modal */
+.sp-modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 20px;
+  z-index: 999;
+}
+.sp-modal{
+  width: min(980px, 100%);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(10,16,30,.92);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+.sp-modal-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 6px 6px 12px;
+}
+.sp-x{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor:pointer;
+}
+.sp-modal-grid{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 14px;
+}
+.sp-modal-preview{
+  border: 1px dashed rgba(255,255,255,.22);
+  background: rgba(0,0,0,.16);
+  border-radius: 18px;
+  padding: 12px;
+}
+.sp-modal-preview img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+@media (max-width: 1050px){
+  .sp-body{grid-template-columns: 1fr}
+  .sp-sidebar{display:none}
+  .sp-grid{grid-template-columns: 1fr 1fr}
+  .sp-form-grid{grid-template-columns: 1fr}
+  .sp-modal-grid{grid-template-columns: 1fr}
+}
+.sp-file::before,
+.sp-file::after,
+.sp-preview::before,
+.sp-preview::after {
+  content: none !important;
+}
+
+.sp-file span {
+  display: inline-block;
+}
+
+/* FIX: remove ghost text created by pseudo-elements */
+.sp-file::before,
+.sp-file::after,
+.sp-preview::before,
+.sp-preview::after {
+  content: none !important;
+}

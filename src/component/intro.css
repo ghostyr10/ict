@@ -1,0 +1,256 @@
+/* ======================
+   INTRO PAGE ONLY (SCOPED)
+====================== */
+
+.intro-page,
+.intro-page *,
+.intro-page *::before,
+.intro-page *::after {
+  box-sizing: border-box;
+}
+
+.intro-page {
+  margin: 0;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* ======================
+   ENTER BUTTON
+====================== */
+.intro-page .enter-btn1.fixed {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  z-index: 20;
+  background: #eeeaea;
+  color: #090909;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 26px;
+  border: 2px solid #ffffff;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.intro-page .enter-btn1.fixed:hover {
+  background: #890cd2;
+}
+
+/* ======================
+   TEMPLATE
+====================== */
+.intro-page .template {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+/* ======================
+   BRAND
+====================== */
+.intro-page .brand-container {
+  position: absolute;
+  inset: 0;
+}
+
+.intro-page .brand-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  transform: translateX(-50%);
+}
+
+.intro-page .brand {
+  font-size: clamp(72px, 14vw, 160px);
+  font-weight: 900;
+  line-height: 1;
+  color: #111;
+  white-space: nowrap;
+}
+
+/* ======================
+   LOAD ANIMATION
+====================== */
+.intro-page .animate {
+  animation: slideFade 1.2s ease forwards;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   SPARKLES
+====================== */
+.intro-page .sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.intro-page .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #7b4dff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 3.5s infinite ease-in-out;
+}
+
+/* positions kept same */
+.intro-page .sparkle:nth-child(n) {
+  box-shadow: 0 0 6px rgba(123,77,255,.6);
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(.5) translateY(8px); }
+  30% { opacity: 1; transform: scale(1) translateY(0); }
+  100% { opacity: 0; transform: scale(.4) translateY(-12px); }
+}
+
+/* ======================
+   HAMBURGER
+====================== */
+.intro-page .hamburger {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+.intro-page .hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #000;
+  margin: 5px 0;
+  display: block;
+  transition: 0.3s;
+}
+
+/* ======================
+   MENU
+====================== */
+.intro-page .menu {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #7b4dff, #d58cff);
+  padding: 80px;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1001;
+}
+
+.intro-page .menu.open {
+  transform: translateX(0);
+}
+
+.intro-page .menu-links p {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 18px;
+}
+
+.intro-page .menu-socials {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  display: flex;
+  gap: 22px;
+  font-size: 28px;
+}
+
+/* ======================
+   SECTION TWO / THREE
+====================== */
+.intro-page .section-two-content,
+.intro-page .section-three-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.intro-page .section-two-content h2,
+.intro-page .section-three-content h2 {
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.intro-page .section-two-content p,
+.intro-page .section-three-content p {
+  font-size: 16px;
+}
+
+/* ======================
+   FEATURES SECTION
+====================== */
+.intro-page .features-inner {
+  display: flex;
+  height: 100%;
+}
+
+.intro-page .features-left,
+.intro-page .features-right {
+  width: 50%;
+}
+
+.intro-page .tablet {
+  width: 520px;
+  height: 320px;
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.intro-page .feature-text {
+  padding: 60px;
+  font-size: 18px;
+}
+
+.intro-page .feature-text h3 {
+  font-size: 28px;
+}
+
+.intro-page .feature-text p {
+  font-size: 16px;
+}
+
+/* ======================
+   FOOTER
+====================== */
+.intro-page .footer-section {
+  background: #111;
+  color: #fff;
+  padding: 60px 40px;
+}
+
+.intro-page .footer-logo {
+  font-size: 22px;
+}
+
+.intro-page .footer-column h3 {
+  font-size: 18px;
+}
+
+.intro-page .footer-column ul li {
+  font-size: 14px;
+}
+
+.intro-page .footer-bottom {
+  font-size: 13px;
+}

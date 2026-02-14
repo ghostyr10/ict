@@ -1,0 +1,74 @@
+.ad-banner-card {
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.ad-banner-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 16px;
+}
+
+.ad-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ad-field label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: rgba(255,255,255,.6);
+}
+
+.ad-field input {
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(0,0,0,.25);
+  color: #fff;
+}
+
+.ad-field.checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.ad-banner-preview {
+  border: 1px dashed rgba(255,255,255,.25);
+  border-radius: 18px;
+  padding: 10px;
+  background: rgba(0,0,0,.25);
+}
+
+.ad-banner-preview img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.ad-file {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  cursor: pointer;
+  font-weight: 700;
+}
+.ad-file input {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .ad-banner-grid {
+    grid-template-columns: 1fr;
+  }
+}
